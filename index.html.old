@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link href="CSS/mainStyle.css" rel="stylesheet"></link>
+	
+	<!-- Jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<title>Emil's Personal Site</title>
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="http://github.com/emilmoham">Emil Mohammed</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="#">Home</a></li>
+					<li><a href="archive/archive.html">Archive</a></li>
+					<li><a href="timer_app/timer.html">Timer App</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="blog">
+					<h4>And We're Live</h4>
+					<h5>April 2nd, 2016</h5><br/>
+					<p>So it's been quite a while since I posted anything to the site, but rest assured I'm not willing to let it die just yet. I've had a few topic ideas for blog posts but just haven't been able to motivate myself to take them on in recent weeks. In an effort to rekindle my motivation, I've spent most of today working on a redesign of the site to try and get it to a state where I'm comfortable enough to publish it to the web. I've also recently learned that Github offers free hosting as well as a sub-domain that looks somewhat professional. It's hard to say no to free hosting so here it is, emilmoham.github.io in all it's glory. <br/></p>
+					<p>I've decide to go with the minimalist look and as you can see I mean business. This site is so minimal it only uses five colors, three of which are just slightly different shades of grey, and the other two are just black and white. In all seriousness I'm actually quite happy with how the site looks right now. I like how clean the blog posts look even if it is a bit bland. Adding a sidebar would probably help to liven things up but I'm honestly not sure what I'd put in it other than some social media buttons or something like that. I'll think of something eventually.<br/></p>
+					<p>Of course, creating this beautiful work of art you see before you didn't take me the entire day to figure out. I spent most of the day on two other tasks, trying to learn Bootstrap and creating functionality for the Archive page. I honestly didn't make much progress on the Bootstrap side of things as you can probably guess. The Nav bar and Font are the only things that use Bootstrap currently. Aside from the functionality where the links collapse to the corner when the window is too small, I could have easily coded everything from scratch in CSS, but I like that function and at least I have the option to mess with it in the future.<br/></p>
+					<p>As for the Archive page, it took me way longer to figure out how store and hide old blog posts than I thought it would. Originally I was planning on using some function of javascript to read the names of basic html files containing older blog posts and dynamically create a list of links for someoene to browse on the Archives page. Unfortunately, Javascript doesn't have a function to read files in a directory and neither does jQuery to the best of my knowledge, that is to say Googling ability. So after hitting a dead end there I looked to other web languages for solutions. PHP was a strong candidate but I was depending on Github for hosting and I can't run a php server on Github's pages service. So with both PHP and Javascript both out of the question for creating a dynamic list of blog posts, I did what every great junior developer does and I decided to give up and hard code everything.<br/></p>
+					<p>I didn't give up on my full plan, however, I figured there had to be a way to append HTML from a file. I managed to stumble across the solution by mistake when I scrolled too far on the W3Schools website and saw a page labled "HTML Includes". It turned out to be basically exactly what I was looking for. The piece I needed was a simple Javascript snippet that looks for the attribute "w3-inlcude-html" in a div tag that normally holds a blog entry. When the script runs it appends html form the file the attribute points to and it appends the HTML in that file to the page. After a bit of fiddling with it I managed to change the scope of the function to allow me to call it whenever I needed to change the HTML instead of on the page load. From there it was just a matter of creating a simple jQuery function that would take a file name as an argument and set the attribute to that filename and call the append function.<br/></p>
+					<p>The system isn't perfect becuase it requires me to manually create a link on the page with the name of the file. Another problem that this method has is that I can't organize the directory the way I would like to. The include function doesn't seem to work when I have the text files in a subdirectory and so everything is just sitting in the main folder right now. It'll work for now but I would really like to be able to organize the different scripts and text files.<br/></p>
+					<p>On an unrelated note, some clever people out there may have noticed that, in the source code, I have a commented out link in the nav bar section lableled "Timer App". This will most likely be the first thing I add to the site after this post. It's a simple count down timer that I coded from scratch at a Hackathon I recently attended. There's nothing super special about it but it displays the time remaining in the title of the web page. I'll post more info about it another time but the basic idea behind it is that it's designed to be used with tabbed browsing. A user can have the timer running in one tab and be able to see how much time is remaining without having to switch tabs. So this is all I have for now. Hopefully I can think of things to add to the site in the future.  Thanks for reading!<br/></p>
+				</div>
+				<hr>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
