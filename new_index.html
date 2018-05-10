@@ -17,63 +17,14 @@
 </head>
 
 <body ng-app="main_app">
-  <nav class="navbar navbar-expand-md navbar-light bg-light">
-    <a class="navbar-brand" href="#">Emil Mohammed</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false"
-      aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Blog</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Github</a>
-        </li>
-        <!--
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Home</a>
-          <a class="dropdown-item" href="#">Blog</a>
-          <a class="dropdown-item" href="#">Github</a>
-        </div>
-      </li>
-      -->
-      </ul>
-      <!--
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-    -->
-    </div>
-  </nav>
+  <!-- Navigation -->
+  <div ng-include="'./partials/top_level_navigation.html'"></div>
   <div class="jumbotron" style="border-radius:0;">
     <h1 class="display-4">Hi, I'm Emil.</h1>
     <p class="lead">Welcome to my blog! This will mostly be a tenchical blog where I'll be posting articles about all the intersting projects
       and events I take part in.
     </p>
   </div>
-
-  <!--
-     <hr class="my-4">
-      <p>Each week I'll be choosing to tackle a coding challenge found on the web and I'll be documenting my thought process,
-        the concepts I learn, and the results. Click the button below to see my latest entry.
-      </p>
-      <p class="lead">
-        <a class="btn btn-primary btn-lg" href="#" role="button">Latest Entry</a>
-      </p>
-  -->
 
   <!-- Columns -->
   <div class="container-fluid">
@@ -89,16 +40,16 @@
           genearally fun to solve I'll link it here.
         </p>
       </div>
-      <div class="col-lg">
+      <div class="col-md">
         <h2>Tutorials</h2>
         <p>
           There are a few technical topic's I've gained experience with both through class and research experience. If I am able to
-          solve any problems where there was a coplete lack or very little information available online, I'll share my experience
+          solve any problems where there was a complete lack or very little information available online, I'll share my experience
           and what I learned in a tutorial format. So far I plan on writing an article for using custom LLVM passes with
           SPEC Benchmarks.
         </p>
       </div>
-      <div class="col-lg">
+      <div class="col-md">
         <h2>Extra</h2>
         <p>
           Any extra information I feel is worth sharing, such as important links, cool projects, or interesting events, will be posted
@@ -108,27 +59,17 @@
     </div>
   </div>
 
-  <div ng-include="'./footer.html'"></div>
+  <!-- Footer -->
+  <div ng-include="'./partials/footer.html'"></div>
 
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- JS -->
+  <script src="JS/main_app.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-
-  <script>
-    var app = angular.module('main_app', [])
-
-    app.config(function ($sceDelegateProvider) {
-      $sceDelegateProvider.resourceUrlWhitelist([
-        'self'
-      ]);
-    });
-  </script>
 </body>
 
 </html>

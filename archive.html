@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <style>
+        .blog_entry {
+            background-color: #f5f5f5;
+            padding: 4px;
+            margin: 4px 0px 4px 0px;
+            border-radius: 4px;
+        }
+
+        .blog_entry h3 {
+            margin: 0px;
+        }
+
+        .blog_entry hr {
+            margin: 0px;
+        }
+
+        .blog_entry p {
+            margin: 0;
+        }
+
+        .blog_entry .badge-info {
+            margin: 2px;
+        }
+
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Emil Mohammed</title>
+</head>
+
+<body ng-app="main_app">
+    <!-- Navigation -->
+    <div ng-include="'./partials/top_level_navigation.html'"></div>
+
+    <div class="container" style="padding-top:20px;">
+        <div ng-controller="list" class="row">
+            <div class="col-md-8">
+                <h1>Blogs</h1>
+                <div ng-repeat="blog in blogs" class="blog_entry">
+                    <h3><a href="{{ blog.file }}">{{ blog.title}}</a></h3>
+                    <p>{{ blog.description }}</p>
+                    <span ng-repeat="tag in blog.tags" class="badge badge-info">{{ tag }}</span>
+                </div>
+            </div>
+            <div class="col-sm">
+
+                <h3>Tags</h3>
+                <hr>
+                <p>At some point, I'm planning on writing a system which will allow for filtering of the blog posts by a selected
+                    tag. This isn't necessary for the initial launch, so I'll put it off for now. In the mean time I'll write
+                    descriptions of the different tags below. </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu bibendum nisl. Phasellus ultrices eros ac turpis aliquam
+                    varius. Nulla commodo laoreet laoreet. Praesent consectetur turpis eget volutpat posuere. Fusce augue
+                    nibh, sollicitudin id semper vitae, cursus ut lacus. Aenean et tincidunt massa, quis accumsan nunc. Phasellus
+                    convallis a odio sed placerat.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!--Footer -->
+    <div ng-include="'./partials/footer.html'"></div>
+    <!-- JS -->
+    <script src="JS/main_app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script>
+        var blog = angular.module("blog_archive", []);
+
+        app.controller("list", function ($scope) {
+            $.getJSON("archive.json", function (data) {
+                $scope.blogs = data;
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
