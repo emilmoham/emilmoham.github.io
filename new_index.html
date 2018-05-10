@@ -108,7 +108,7 @@
     </div>
   </div>
 
-  <div ng-include="'footer.html'"></div>
+  <div ng-include="'./footer.html'"></div>
 
 
   <!-- Optional JavaScript -->
@@ -125,7 +125,7 @@
 
     app.config(function ($sceDelegateProvider) {
       $sceDelegateProvider.resourceUrlWhitelist([
-        'emilmoham.github.io/**'
+        'self'
       ]);
     });
   </script>
