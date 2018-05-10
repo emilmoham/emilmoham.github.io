@@ -1,0 +1,22 @@
+.blog_entry {
+    background-color: #f5f5f5;
+    padding: 4px;
+    margin: 4px 0px 4px 0px;
+    border-radius: 4px;
+}
+
+.blog_entry h3 {
+    margin: 0px;
+}
+
+.blog_entry hr {
+    margin: 0px;
+}
+
+.blog_entry p {
+    margin: 0;
+}
+
+.blog_entry .badge-info {
+    margin: 2px;
+}
