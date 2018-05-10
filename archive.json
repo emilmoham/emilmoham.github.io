@@ -1,9 +1,57 @@
 
 [
     {
-        "title": "How to make a Website",
-        "file": "archive/new_archive/20180509.html",
-        "description": "We make a website...",
-        "tags": ["New", "Updated", "Wow"]
+        "title": "And We're Live",
+        "file": "archive/20160402.html",
+        "description": "Second blog post, made when I first tried to learn Bootstrap. The old website is long gone.",
+        "tags": ["Website"]
+    },
+    {
+        "title": "The Losing Side of History",
+        "file": "archive/20151231.html",
+        "description": "Should robots have the same rights as people?",
+        "tags": ["Gaming", "Movies"]
+    },
+    {
+        "title": "On Nostalgia",
+        "file": "archive/20151125.html",
+        "description": "A trip down memory lane talking about my experiences with Runescape and Anarchy Online. ",
+        "tags": ["Gaming"]
+    },
+    {
+        "title": "Life is Strange: Episode 5",
+        "file": "archive/20151024.html",
+        "description": "My thoughts on the final episode of Life is Strange",
+        "tags": ["Gaming"]
+    },
+    {
+        "title": "Life is Strange: Episode 4",
+        "file": "archive/20151018.html",
+        "description": "My thoughts on the fourth episode of Life is Strange",
+        "tags": ["Gaming"]
+    },
+    {
+        "title": "Life is Strange: Episode 3",
+        "file": "archive/20151004.html",
+        "description": "My thoughts on the third episode of Life is Strange",
+        "tags": ["Gaming"]
+    },
+    {
+        "title": "Life is Strange: Episode 2",
+        "file": "archive/20150925.html",
+        "description": "My thoughts on the second episode of Life is Strange",
+        "tags": ["Gaming"]
+    },
+    {
+        "title": "Life is Strange: Episode 1",
+        "file": "archive/20150914.html",
+        "description": "My thoughs on and recap of the first epsiode of Life is Strange.",
+        "tags": ["Gaming"]
+    },
+    {
+        "title": "Yeah This Will Probably Do",
+        "file": "archive/20150907.html",
+        "description": "Old website's introductory blog.",
+        "tags": ["Website"]
     }
 ]

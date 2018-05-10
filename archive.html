@@ -11,33 +11,10 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="CSS/footer.css">
-    <style>
-        .blog_entry {
-            background-color: #f5f5f5;
-            padding: 4px;
-            margin: 4px 0px 4px 0px;
-            border-radius: 4px;
-        }
-
-        .blog_entry h3 {
-            margin: 0px;
-        }
-
-        .blog_entry hr {
-            margin: 0px;
-        }
-
-        .blog_entry p {
-            margin: 0;
-        }
-
-        .blog_entry .badge-info {
-            margin: 2px;
-        }
-
-    </style>
+    <link rel="stylesheet" href="CSS/archive.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.min.js"></script>
     <title>Emil Mohammed</title>
 </head>
 
@@ -50,7 +27,7 @@
             <div class="col-md-8">
                 <h1>Blogs</h1>
                 <div ng-repeat="blog in blogs" class="blog_entry">
-                    <h3><a href="{{ blog.file }}">{{ blog.title}}</a></h3>
+                    <h5><a href="blog_entry.html#/20151004">{{ blog.title}}</a></h5>
                     <p>{{ blog.description }}</p>
                     <span ng-repeat="tag in blog.tags" class="badge badge-info">{{ tag }}</span>
                 </div>
@@ -83,8 +60,6 @@
         crossorigin="anonymous"></script>
 
     <script>
-        var blog = angular.module("blog_archive", []);
-
         app.controller("list", function ($scope) {
             $.getJSON("archive.json", function (data) {
                 $scope.blogs = data;

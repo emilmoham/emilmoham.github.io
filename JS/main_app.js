@@ -1,4 +1,4 @@
-var app = angular.module('main_app', [])
+var app = angular.module('main_app', ['ngRoute'])
 
 app.config(function ($sceDelegateProvider) {
     $sceDelegateProvider.resourceUrlWhitelist([

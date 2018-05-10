@@ -11,7 +11,7 @@ INDEX_TEMPLATE = r"""
 % for obj in object_list:
     {
         "title": "${obj['title']}",
-        "file": "archive/${obj['file']}",
+        "file": "${obj['file']}",
         "description": "${obj['description']}",
         "tags": ${obj['tags']}
     }${'' if loop.last else ','}
@@ -58,12 +58,22 @@ def main():
         with open(fpath, 'r') as fp:
             obj = {}
             soup = BeautifulSoup(fp, "lxml")
-            obj["title"] = soup.find(id=title_id).text
+            try:
+                title = soup.find(id=title_id).text
+                description = soup.find(id=description_id).text
+                tags = json.dumps(soup.find(id=tags_id).text.split())
+            except AttributeError:
+                title = ""
+                description = ""
+                tags = [""]
+
+
+            
+            obj["title"] = title
             obj["file"] = fpath
-            obj["description"] = soup.find(id=description_id).text
+            obj["description"] = description
 
             # could probably just use this for the whole process tbh
-            tags = json.dumps(soup.find(id=tags_id).text.split())
             obj["tags"] = tags
             files.append(obj)
 

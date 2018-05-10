@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+
 
     <link rel="stylesheet" href="CSS/footer.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.min.js"></script>
     <title>Emil Mohammed</title>
 </head>
 
@@ -24,51 +25,8 @@
 
     <div class="container" style="padding-top:20px;">
         <div class="row">
-            <div class="col-md-8">
-                <h1>Blog Title</h1>
-                <hr>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu bibendum nisl. Phasellus ultrices eros ac turpis aliquam
-                    varius. Nulla commodo laoreet laoreet. Praesent consectetur turpis eget volutpat posuere. Fusce augue
-                    nibh, sollicitudin id semper vitae, cursus ut lacus. Aenean et tincidunt massa, quis accumsan nunc. Phasellus
-                    convallis a odio sed placerat. Sed vehicula nisi elit. Integer in justo sagittis, aliquet diam quis,
-                    pharetra neque. Morbi placerat nisi ut urna porttitor accumsan nec in erat. Etiam eu risus viverra, rhoncus
-                    libero iaculis, ultricies elit. Quisque rutrum turpis et felis convallis, et feugiat nulla dictum.
-                </p>
-                <p>
-                    Nunc quis porttitor odio. Quisque tincidunt, orci et aliquam facilisis, mauris magna facilisis magna, id imperdiet elit ipsum
-                    ac libero. In sed dui congue, imperdiet nisl malesuada, blandit augue. Vestibulum vehicula lectus ut
-                    ipsum condimentum, vitae auctor tortor lobortis. In blandit est ut finibus iaculis. Fusce fringilla,
-                    nisl vel congue fermentum, enim tortor sagittis justo, vel egestas sem tellus ut quam. Aenean nec molestie
-                    dui. Vivamus ornare, tellus nec sollicitudin vehicula, mi ex congue tellus, id facilisis lorem ante feugiat
-                    lectus. Aenean bibendum ex eget venenatis feugiat. Aliquam consequat urna erat, et sagittis enim auctor
-                    ut. Nunc ultricies tincidunt faucibus.
-                </p>
-                <p>
-                    Pellentesque posuere turpis nec iaculis sodales. Sed elementum nunc quis augue malesuada, a lobortis erat suscipit. Mauris
-                    mattis egestas est. Suspendisse sollicitudin eu odio quis tincidunt. In pharetra elementum justo, in
-                    lacinia nibh posuere iaculis. Integer lacinia a odio id imperdiet. Nulla quis nisl a nisl faucibus consequat.
-                    Morbi facilisis dictum metus, at imperdiet lectus laoreet ac. Integer ac lacus turpis. Donec sed arcu
-                    tortor. Nulla quam neque, convallis rutrum ultrices a, scelerisque at ipsum. Fusce ullamcorper, nisi
-                    ut pulvinar semper, risus eros aliquam dolor, at cursus mi elit non felis.
-                </p>
-                <p>
-                    Ut in vehicula est. Integer ut arcu justo. Etiam rutrum sollicitudin finibus. Aenean imperdiet magna risus, non feugiat orci
-                    euismod eget. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                    Curabitur purus quam, molestie eget tempus id, malesuada sed tortor. Suspendisse ultrices vitae arcu
-                    vel congue. Mauris ullamcorper nisi ac lobortis euismod. Sed mattis erat est, vitae consequat ligula
-                    dapibus tempor. Integer consectetur hendrerit nulla at dictum. Duis iaculis tortor a leo dignissim sodales.
-                </p>
-                <p>
-                    Nulla in velit urna. Maecenas aliquet risus sit amet felis imperdiet, cursus malesuada neque luctus. Fusce vitae pharetra
-                    dui, ut feugiat augue. Donec finibus accumsan quam, eu ultrices lacus varius eget. Integer sed semper
-                    ligula, sed porttitor sem. Praesent tempus fermentum diam, non efficitur mi gravida non. Ut luctus, mi
-                    lobortis finibus ornare, nulla felis viverra purus, vitae lobortis elit nisi sit amet arcu. Proin egestas
-                    mauris augue, et imperdiet arcu convallis ut. Donec eget libero odio.
-                </p>
-            </div>
+            <div id="" ng-view="" class="col-md-8"></div>
             <div class="col-sm">
-
                 <h3>Previous Entries</h3>
                 <hr>
                 <p>
@@ -77,7 +35,6 @@
                     nibh, sollicitudin id semper vitae, cursus ut lacus. Aenean et tincidunt massa, quis accumsan nunc. Phasellus
                     convallis a odio sed placerat.
                 </p>
-
                 <h3>Archive</h3>
                 <hr>
                 <p>
@@ -86,7 +43,6 @@
                     nibh, sollicitudin id semper vitae, cursus ut lacus. Aenean et tincidunt massa, quis accumsan nunc. Phasellus
                     convallis a odio sed placerat.
                 </p>
-
             </div>
         </div>
     </div>
@@ -94,13 +50,51 @@
     <!--Footer -->
     <div ng-include="'./partials/footer.html'"></div>
     <!-- JS -->
-    <script src="JS/main_app.js"></script>
+    <!--<script src="JS/main_app.js"></script>-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.min.js"></script>
+    <script>
+        var app = angular.module('main_app', ['ngSanitize', 'ngRoute']);
+        app.config(function ($sceDelegateProvider) {
+            $sceDelegateProvider.resourceUrlWhitelist([
+                'self'
+            ]);
+        });
+        app.config(['$locationProvider', function ($locationProvider) {
+            $locationProvider.hashPrefix('');
+        }]);
+        app.config(function ($routeProvider) {
+            $routeProvider.when('/', {
+                templateUrl: 'partials/blog.html',
+                controller: 'blogController'
+            }).when('/:date', {
+                templateUrl: 'partials/blog.html',
+                controller: 'blogController'
+            }).otherwise({
+                redirectTo: '/'
+            });
+        });
+
+        app.controller('blogController', function ($scope, $http, $routeParams) {
+            console.log($routeParams);
+            var url = "/archive/" + $routeParams.date + ".html";
+
+            $http.get(url).then(
+                function (response) {
+                    console.log(response);
+                    $scope.appendData = response.data;
+                },
+                function (response) {
+                    console.log(response);
+                    $scope.errorMsg = "Error: " + response.status;
+                });
+        });
+    </script>
 
 </body>
 
