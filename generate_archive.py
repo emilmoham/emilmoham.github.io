@@ -3,86 +3,69 @@
 Credit: Matthew Brett and Nathan Arthur
 https://stackoverflow.com/questions/39048654/how-to-enable-directory-indexing-on-github-pages
 
-make_index.py </path/to/directory> [--header <header text>]
+I skip the string formatting as I only need a JSON file corresponding to the
+directory and some meta information within the files.
 """
-
-INDEX_TEMPLATE = r"""
-[
-% for obj in object_list:
-    {
-        "title": "${obj['title']}",
-        "file": "${obj['file']}",
-        "description": "${obj['description']}",
-        "tags": ${obj['tags']}
-    }${'' if loop.last else ','}
-% endfor
-]
-"""
-
-EXCLUDED = ['index.html','archive.html','getOldPosts.js','w3-include-HTML.js']
-title_id = "meta-title"
-description_id = "meta-description"
-tags_id = "meta-tags"
-
-
 import os
 import json
 import argparse
 from bs4 import BeautifulSoup
+from datetime import datetime
 
-# May need to do "pip install mako"
-from mako.template import Template
+EXCLUDED = []
 
+meta_tag_names = ["title", "description", "tags"]
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("directory")
-    parser.add_argument("--header")
+    # parser.add_argument("--header")
     parser.add_argument("--output")
     args = parser.parse_args()
 
-    ### Read all filenames
-    fnames = [fname for fname in sorted(os.listdir(args.directory), reverse=True)
-              if fname not in EXCLUDED]
-    header = (args.header  if args.header else os.path.basename(args.directory))
-
+    # Append '/' to directory if needed
     if args.directory[len(args.directory)-1] != '/':
         args.directory = args.directory + '/'
 
-    ### Gather information
-    files = []
+    # Read all filenames
+    fnames = [fname for fname in sorted(os.listdir(args.directory), reverse=True)
+            if fname not in EXCLUDED]
 
+    files_json = []
 
-    for name in fnames:
-        fpath = args.directory + name
-        with open(fpath, 'r') as fp:
-            obj = {}
+    for file_name in fnames:
+        link_num = file_name.rstrip(".html")
+        date = datetime.strptime(link_num, "%Y%m%d").strftime("%B %d, %Y")
+        fpath = args.directory + file_name
+
+        obj = {}
+        with open(fpath) as fp:
             soup = BeautifulSoup(fp, "lxml")
-            try:
-                title = soup.find(id=title_id).text
-                description = soup.find(id=description_id).text
-                tags = json.dumps(soup.find(id=tags_id).text.split())
-            except AttributeError:
-                title = ""
-                description = ""
-                tags = [""]
+            for name in meta_tag_names:
+                try:
+                    obj[name] = soup.find("meta", {"name": name})['content']
+                except TypeError:
+                    obj[name] = ""
 
+            obj["tags"] = obj["tags"].split()
+            obj["link"] = link_num
+            obj["date"] = date
 
-            
-            obj["title"] = title
-            obj["file"] = fpath
-            obj["description"] = description
+        files_json.append(json.dumps(obj))
 
-            # could probably just use this for the whole process tbh
-            obj["tags"] = tags
-            files.append(obj)
-
-    ### Write information out to JSON file
     if args.output:
         with open(args.output, "w") as fp:
-            fp.write(Template(INDEX_TEMPLATE).render(object_list=files))
+            fp.write("[\n")
+            for file in files_json[:-1]:
+                fp.write(str(file)+",\n")
+            fp.write(str(files_json[-1]))
+            fp.write("\n]")
     else:
-        print(Template(INDEX_TEMPLATE).render(object_list=files))
+        print "["
+        for file in files_json[:-1]:
+            print str(file)+","
+        print str(files_json[-1])
+        print "]"
 
 
 if __name__ == '__main__':
