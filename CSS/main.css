@@ -1,5 +1,13 @@
+#jumbotron {
+	background-color:#37ACEB;
+}
+
+
+#footer {
+	background-color: #605F5E;
+}
 .blog_entry {
-    background-color: #f5f5f5;
+    background-color: #F2F2F2;
     padding: 4px;
     margin: 4px 0px 4px 0px;
     border-radius: 4px;
@@ -19,4 +27,12 @@
 
 .blog_entry .badge-info {
     margin: 2px;
+}
+
+.blog_entry h5 a {
+	color: #FB3640;
+}
+
+.blog_entry .badge-info {
+	background-color: #605F5E;
 }
