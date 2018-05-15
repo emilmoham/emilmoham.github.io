@@ -1,57 +1,11 @@
-
 [
-    {
-        "title": "And We're Live",
-        "file": "archive/20160402.html",
-        "description": "Second blog post, made when I first tried to learn Bootstrap. The old website is long gone.",
-        "tags": ["Website"]
-    },
-    {
-        "title": "The Losing Side of History",
-        "file": "archive/20151231.html",
-        "description": "Should robots have the same rights as people?",
-        "tags": ["Gaming", "Movies"]
-    },
-    {
-        "title": "On Nostalgia",
-        "file": "archive/20151125.html",
-        "description": "A trip down memory lane talking about my experiences with Runescape and Anarchy Online. ",
-        "tags": ["Gaming"]
-    },
-    {
-        "title": "Life is Strange: Episode 5",
-        "file": "archive/20151024.html",
-        "description": "My thoughts on the final episode of Life is Strange",
-        "tags": ["Gaming"]
-    },
-    {
-        "title": "Life is Strange: Episode 4",
-        "file": "archive/20151018.html",
-        "description": "My thoughts on the fourth episode of Life is Strange",
-        "tags": ["Gaming"]
-    },
-    {
-        "title": "Life is Strange: Episode 3",
-        "file": "archive/20151004.html",
-        "description": "My thoughts on the third episode of Life is Strange",
-        "tags": ["Gaming"]
-    },
-    {
-        "title": "Life is Strange: Episode 2",
-        "file": "archive/20150925.html",
-        "description": "My thoughts on the second episode of Life is Strange",
-        "tags": ["Gaming"]
-    },
-    {
-        "title": "Life is Strange: Episode 1",
-        "file": "archive/20150914.html",
-        "description": "My thoughs on and recap of the first epsiode of Life is Strange.",
-        "tags": ["Gaming"]
-    },
-    {
-        "title": "Yeah This Will Probably Do",
-        "file": "archive/20150907.html",
-        "description": "Old website's introductory blog.",
-        "tags": ["Website"]
-    }
+{"date": "April 02, 2016", "tags": ["Website"], "link": "20160402", "description": "Second blog post, made when I first tried to learn Bootstrap. The old website is long gone.", "title": "And We're Live"},
+{"date": "December 31, 2015", "tags": ["Gaming", "Movies"], "link": "20151231", "description": "Should robots have the same rights as people?", "title": "The Losing Side of History"},
+{"date": "November 25, 2015", "tags": ["Gaming"], "link": "20151125", "description": "A trip down memory lane talking about my experiences with Runescape and Anarchy Online.", "title": "On Nostalgia"},
+{"date": "October 24, 2015", "tags": ["Gaming"], "link": "20151024", "description": "My thoughts on the final episode of Life is Strange", "title": "Life is Strange: Episode 5"},
+{"date": "October 18, 2015", "tags": ["Gaming"], "link": "20151018", "description": "My thoughts on the fourth episode of Life is Strange", "title": "Life is Strange: Episode 4"},
+{"date": "October 04, 2015", "tags": ["Gaming"], "link": "20151004", "description": "My thoughts on the third episode of Life is Strange", "title": "Life is Strange: Episode 3"},
+{"date": "September 25, 2015", "tags": ["Gaming"], "link": "20150925", "description": "My thoughts on the second episode of Life is Strange", "title": "Life is Strange: Episode 2"},
+{"date": "September 14, 2015", "tags": ["Gaming"], "link": "20150914", "description": "My thoughs on and recap of the first epsiode of Life is Strange.", "title": "Life is Strange: Episode 1"},
+{"date": "September 07, 2015", "tags": ["Website"], "link": "20150907", "description": "Old website's introductory blog.", "title": "Yeah This Will Probably Do"}
 ]
