@@ -61,11 +61,11 @@ def main():
             fp.write(str(files_json[-1]))
             fp.write("\n]")
     else:
-        print "["
+        print ("[")
         for file in files_json[:-1]:
-            print str(file)+","
-        print str(files_json[-1])
-        print "]"
+            print(str(file)+",")
+        print(str(files_json[-1]))
+        print("]")
 
 
 if __name__ == '__main__':
