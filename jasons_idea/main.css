@@ -1,0 +1,120 @@
+.content {
+	margin: auto;
+	max-width: 600px;
+	
+	font-family: 'Lexend', sans-serif;
+}
+
+.colorGroup {
+	border: 1px solid black;
+	padding: 10px;
+	margin: 5px;
+	position: relative;
+	text-align:center;
+}
+
+.colorGroup button { 
+	font-size: large;
+	text-align: center;
+	border: 0;
+	border-radius: 15%;
+	
+	width: 40px;
+	height: 40px;
+}
+
+#red {
+	background-color: #c63343;
+}
+
+#red button {
+	background-color: #d7c3be;
+	color: #c63343
+}
+#red button.selected {
+	background-color: #c77763;
+}
+
+#yellow {
+	background-color: #ddb225;
+}
+
+#yellow button {
+	background-color: #d9d2bf;
+	color: #ddb225;
+}
+
+#yellow button.selected {
+	background-color: #e5c457;
+}
+
+#green {
+	background-color: #327f58;
+}
+
+#green button {
+	background-color: #b4c3be;
+	color: #327f58;
+}
+
+#green button.selected {
+	background-color: #5fa48d;
+}
+
+#blue {
+	background-color: #445ca0;
+}
+
+#blue button {
+	background-color: #b3bacd;
+	color: #445ca0;
+}
+
+#blue button.selected {
+	background-color: #5d71a9;
+}
+
+.belowColors {
+	display: inline-block;
+	width: 100%;
+	padding-top: 10px;
+}
+
+.belowColors #left {
+	float: left;
+}
+
+.belowColors #right {
+	float: right;
+}
+
+.pointsDescription {
+	display: inline-block;
+	
+	font-size: small;
+	text-align: center;
+	
+	border: 2px solid black;
+	border-radius: 10px;
+	
+	min-width: 30px;
+}
+
+#key {
+	min-width: 50px;
+}
+
+.score {
+	width: 100%;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.score p {
+	display: inline;
+}
+
+.tbScore {
+	width: 13%;
+	text-align: center;
+}
